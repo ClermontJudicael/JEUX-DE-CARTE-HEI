@@ -1,6 +1,23 @@
 const prompt = require('prompt-sync')();
 const art = require('./art');
 
+function menu() {
+  console.log('----------------------------');
+  console.log('|       jeu de cartes      |');
+  console.log('----------------------------');
+  console.log('|      1)  jouer           |');
+  console.log('|      2)  quitter         |');
+  console.log('----------------------------');
+  let choice = +prompt('que faire : ');
+  console.log('----------------------------');
+  if (choice == 1) {
+    main();
+  } else if (choice == 2) {
+    console.log('|    a bientot.');
+    console.log('----------------------------');
+    return 1;
+  }
+}
 
 function compareAnswer(playerCard, aiCard) {
   if (playerCard == 'feu') {
@@ -43,12 +60,19 @@ function askCard() {
 }
 
 function main() {
+  let playerName = prompt('saisir votre nom: ');
   let round = 1;
   let scoreAI = 0;
   let scorePlayer = 0;
   for (let i = 1; i <= 3; i++) {
     // notre liste de carte
+    console.log('----------------------------');
+    console.log(
+        '|   ' + playerName + ' VS IA' +
+        ' Round ' + i + ':');
+    console.log('----------------------------');
     let AIinventory = ['feu', 'plante', 'eau'];
+
 
     console.log('Round ', round);
 
@@ -81,19 +105,21 @@ function main() {
 
   art.finalResult(scoreAI, scorePlayer, '\n\n');
 
-  let replay = prompt('Voulez vous rejouer (y/n)>');
-
-  if (replay.toLowerCase() == 'y') {
-    main();
-  } else if (replay.toLowerCase() == 'n') {
-    console.log('Fin de la partie.....');
+  let ending = prompt('Voulez-vous rejouer(Y/N) :');
+  if (ending.toLocaleLowerCase() == 'n') {
     return;
+  } else if (ending.toLocaleLowerCase() == 'y') {
+    main();
   } else {
-    console.log('Invalid command, quiting anyway...');
+    console.log('Command invalide');
     return;
   }
 }
 
 art.fire();
 art.eau();
+let test = menu();
+if (test == 1) {
+  return;
+}
 main();
