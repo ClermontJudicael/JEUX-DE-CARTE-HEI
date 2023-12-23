@@ -20,4 +20,4 @@ Le jeu a été facile à implémenter, la principale difficulté reste le choix 
 1) Clermont Judicaël
 2) Andrimandresy Kenny Unity 
 
-Etudiant en L1 chez [HEI](https://hei.school/)
+Etudiant en L1-J1 chez [HEI](https://hei.school/)
