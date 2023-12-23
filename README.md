@@ -11,4 +11,6 @@ node main.js
 
 Le jeu a été facile à implémenter, la principale difficulté reste le choix des fonctions à utiliser vue qu'il y a deux versions différents du jeu.
 
+## Apperçu du jeux:
 
+![xxxx](https://github.com/ClermontJudicael/JEUX-DE-CARTE-HEI/assets/135115381/031db122-242c-4d2c-bbaf-df18491e9d59)
